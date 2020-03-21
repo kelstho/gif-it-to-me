@@ -37,7 +37,7 @@ db.sequelize.sync().then(function() {
 
   var io = socket(server);
 
-  io.on("connection", function(socket){
+  io.on("connection", function(socket) {
     console.log("made connection", socket.id);
 
     socket.on("chat", function(data) {
