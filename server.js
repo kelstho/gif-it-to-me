@@ -37,12 +37,12 @@ db.sequelize.sync().then(function() {
 
   var io = socket(server);
 
-  io.on('connection', function(socket){
-    console.log('made connection', socket.id);
+  io.on("connection", function(socket){
+    console.log("made connection", socket.id);
 
     socket.on("chat", function(data) {
       //NEED TO change this!! This is for all sockets
       io.sockets.emit("chat", data);
-    })
-  })
+    });
+  });
 });

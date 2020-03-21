@@ -13,6 +13,6 @@ btn.addEventListener("click", function () {
   });
 });
 
-socket.on('chat', function (data) {
+socket.on("chat", function (data) {
   output.innerHTML += "<p>" + data.handle + ":" + data.message + "</p>";
 });
