@@ -3,7 +3,7 @@ var express = require("express");
 var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
-const socket = require('socket.io');
+var socket = require("socket.io");
 
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
@@ -40,9 +40,9 @@ db.sequelize.sync().then(function() {
   io.on('connection', function(socket){
     console.log('made connection', socket.id);
 
-    socket.on('chat', function(data) {
+    socket.on("chat", function(data) {
       //NEED TO change this!! This is for all sockets
-      io.sockets.emit('chat', data);
+      io.sockets.emit("chat", data);
     })
   })
 });
