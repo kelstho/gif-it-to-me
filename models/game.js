@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true,
       primaryKey: true
     },
-    board_name: {
+    boardName: {
       type: DataTypes.STRING,
       allowNull: false
     },
