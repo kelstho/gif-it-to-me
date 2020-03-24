@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  webAddress = "http://localhost:8080";
+  webAddress = "http://localhost:8080/gameBoard";
   var socket = io.connect(webAddress);
 
   var message = document.getElementById("message");
@@ -7,6 +7,12 @@ $(document).ready(function() {
   btn = document.getElementById("send");
   output = document.getElementById("output");
 
+  var queryString = window.location.search;
+
+  console.log("query" + queryString);
+  var urlParams = new URLSearchParams(queryString);
+  var qVal = urlParams.get("gameName");
+  console.log("qval" + qVal);
   btn.addEventListener("click", function() {
     socket.emit("chat", {
       message: message.value,
