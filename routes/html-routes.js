@@ -26,7 +26,7 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
-  app.get("/gameBoard", function(req, res){
+  app.get("/gameBoard", function(req, res) {
     app.gameName = req.query.gameName;
     res.sendFile(path.join(__dirname, "../public/gameboard.html"));
     // res.json({
