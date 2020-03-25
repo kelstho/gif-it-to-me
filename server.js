@@ -47,6 +47,6 @@ db.sequelize.sync().then(function() {
     });
     socket.on(app.gameName, function(data) {
       io.sockets.emit(app.gameName, data);
-    })
+    });
   });
 });
