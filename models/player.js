@@ -9,17 +9,17 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    ready: {
-      type: DataTypes.BOOLEAN
-    },
-    spaceid: {
+    currentspacevalue: {
       type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    gameid: {
-      type: DataTypes.INTEGER,
+      default: 0
+    }
+  });
+
+  Player.belongsTo(db.Game, {
+    foreignKey: {
       allowNull: false
     }
   });
+
   return Player;
 };

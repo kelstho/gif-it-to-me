@@ -9,10 +9,17 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    gameid: {
+    value: {
       type: DataTypes.INTEGER,
       allowNull: false
     }
   });
+
+  Space.belongsTo(db.Game, {
+    foreignKey: {
+      allowNull: false
+    }
+  });
+
   return Space;
 };
