@@ -13,5 +13,18 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER
     }
   });
+
+  Game.hasMany(db.Space, {
+    foreignKey: {
+      allowNull: false
+    }
+  });
+
+  Game.hasMany(db.Player, {
+    foreignKey: {
+      allowNull: false
+    }
+  });
+
   return Game;
 };
