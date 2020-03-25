@@ -23,7 +23,7 @@ app.use(passport.session());
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+//require("./routes/api-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {
@@ -38,11 +38,15 @@ db.sequelize.sync().then(function() {
   var io = socket(server);
 
   io.on("connection", function(socket) {
+    console.log("game name " + app.gameName);
     console.log("made connection", socket.id);
 
     socket.on("chat", function(data) {
       //NEED TO change this!! This is for all sockets
       io.sockets.emit("chat", data);
     });
+    socket.on(app.gameName, function(data) {
+      io.sockets.emit(app.gameName, data);
+    })
   });
 });
