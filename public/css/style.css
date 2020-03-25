@@ -1,0 +1,62 @@
+#ready-div {
+    padding: 40px;
+}
+
+#gameboard {
+    width: 1000px;
+}
+
+.gif-div, #winner-div {
+    border: solid;
+    height: 175px;
+    width: 300px;
+}
+
+#winner-div {
+    background-color: gold;
+}
+
+.space-div {
+    border: solid;
+    border-top: none;
+    height: 20px;
+    width: 300px;
+}
+
+.player-space {
+    height: 17px;
+    width: 49px;
+    float: left;
+}
+
+.player-1 {
+    background-color: red;
+}
+
+.player-2 {
+    background-color: blue;
+}
+
+.player-3 {
+    background-color: yellow;
+}
+
+.player-4 {
+    background-color: green;
+}
+
+.player-5 {
+    background-color: orange;
+}
+
+.player-6 {
+    background-color: purple;
+}
+
+#game-winner {
+    background-color: gold;
+}
+
+#trophy {
+    max-width: 200px;
+}

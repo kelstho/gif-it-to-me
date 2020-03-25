@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Gif Me</title>
+  <link rel="stylesheet" href="css/reset.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+  <!-- Modals -->
+
+  <!-- Ready Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#ready-modal">Ready</a>
+  <!-- Ready Modal -->
+  <div id="ready-modal" class="modal">
+    <div class="modal-content center-align" id="ready-div">
+      <a href="#!" class="modal-close waves-effect waves-light btn green darken-2">Ready!</a>
+    </div>
+  </div>
+  <!-- First Judge Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#first-judge">First Judge</a>
+  <!-- First Judge Modal -->
+  <div id="first-judge" class="modal">
+    <div class="modal-content">
+      <h4 class="center-align">The First Judge Is...</h4>
+      <div class="center-align">
+        <h5 id="first-judge-player">Player 3!</h5>
+      </div>
+      <br>
+    </div>
+  </div>
+  <!-- Gif to Caption Trigger-->
+  <a class="waves-effect waves-light btn modal-trigger" href="#gif-to-caption">Gif to Caption</a>
+  <!-- Gif to Caption Modal -->
+  <div id="gif-to-caption" class="modal">
+    <div class="modal-content">
+      <h4 class="center-align">Here's The Gif!</h4>
+      <div class="center-align">
+        <img class="moving-gif"
+          src="https://media2.giphy.com/media/jqwBWMHrcyKb2wHJnK/200.gif?cid=ecf05e4780a5d6ccce9b7d5fb016cbe5a3a202da52733920&rid=200.gif">
+      </div>
+      <br>
+    </div>
+  </div>
+  <!-- Write Caption Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#write-modal">Caption</a>
+  <!-- Write Caption Modal -->
+  <div id="write-modal" class="modal">
+    <div class="modal-content">
+      <h4 class="center-align">Write Your Caption!</h4>
+      <h5 class="center-align timer">(timer)</h5>
+      <br>
+      <div class="center-align">
+        <img class="moving-gif"
+          src="https://media2.giphy.com/media/jqwBWMHrcyKb2wHJnK/200.gif?cid=ecf05e4780a5d6ccce9b7d5fb016cbe5a3a202da52733920&rid=200.gif">
+      </div>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <label for="textarea1">Caption:</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit!</a>
+    </div>
+  </div>
+  <!-- Judge Waits Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#judge-waits">Judge Waits</a>
+  <!-- Judge Waits Modal -->
+  <div id="judge-waits" class="modal">
+    <div class="modal-content">
+      <h4 class="center-align">Players Are Captioning...</h4>
+      <div class="center-align">
+        <img class="moving-gif"
+          src="https://media2.giphy.com/media/jqwBWMHrcyKb2wHJnK/200.gif?cid=ecf05e4780a5d6ccce9b7d5fb016cbe5a3a202da52733920&rid=200.gif">
+      </div>
+      <br>
+      <h5 class="center-align timer">(timer)</h5>
+    </div>
+  </div>
+  <!-- Judging Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#judge-modal">Judging</a>
+  <!-- Judging Modal -->
+  <div id="judge-modal" class="modal">
+    <div class="modal-content">
+      <h4 class="center-align">Pick The Best One</h4>
+      <h5 class="center-align timer">(timer)</h5>
+      <br>
+      <div class="center-align">
+        <img class="moving-gif"
+          src="https://media2.giphy.com/media/jqwBWMHrcyKb2wHJnK/200.gif?cid=ecf05e4780a5d6ccce9b7d5fb016cbe5a3a202da52733920&rid=200.gif">
+      </div>
+      <br>
+      <div id="final-captions">
+        <p class="center-align">-Only Pick Your Favorite!-</p>
+        <br>
+        <form action="#">
+          <p>
+            <label>
+              <input type="checkbox" class="filled-in" />
+              <span>Gingerbread cake donut biscuit donut marzipan sweet wafer apple pie. Chupa chups toffee topping
+                chocolate fruitcake halvah.</span>
+            </label>
+          </p>
+          <br>
+          <p>
+            <label>
+              <input type="checkbox" class="filled-in" />
+              <span>Bacon ipsum dolor amet bresaola cow shankle t-bone spare ribs pancetta. Burgdoggen beef pork loin
+                ham hock shankle ground round pancetta.</span>
+            </label>
+          </p>
+          <br>
+          <p>
+            <label>
+              <input type="checkbox" class="filled-in" />
+              <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                scrambled it to make a type specimen book.</span>
+            </label>
+          </p>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit!</a>
+    </div>
+  </div>
+  <!-- Players Wait Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#players-wait">Players Wait</a>
+  <!-- Players Wait Modal -->
+  <div id="players-wait" class="modal">
+    <div class="modal-content">
+      <h4 class="center-align">Judge Is Picking...</h4>
+      <div class="center-align">
+        <img class="moving-gif"
+          src="https://media2.giphy.com/media/jqwBWMHrcyKb2wHJnK/200.gif?cid=ecf05e4780a5d6ccce9b7d5fb016cbe5a3a202da52733920&rid=200.gif">
+      </div>
+      <br>
+      <h5 class="center-align timer">(timer)</h5>
+    </div>
+  </div>
+  <!-- Round Winner Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#round-winner">Round Winner</a>
+  <!-- Round Winner Modal -->
+  <div id="round-winner" class="modal">
+    <div class="modal-content">
+      <h4 class="center-align">The Winner of This Round Is...</h4>
+      <div class="center-align">
+        <img class="moving-gif"
+          src="https://media2.giphy.com/media/jqwBWMHrcyKb2wHJnK/200.gif?cid=ecf05e4780a5d6ccce9b7d5fb016cbe5a3a202da52733920&rid=200.gif">
+      </div>
+      <br>
+      <div class="center-align">
+        <h5 id="round-winner-player">Player 1!</h5>
+        <p id="round-winner-caption">Bacon ipsum dolor amet bresaola cow shankle t-bone spare ribs pancetta. Burgdoggen
+          beef pork loin ham hock shankle ground round pancetta.</p>
+      </div>
+    </div>
+  </div>
+  <!-- New Judge Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#new-judge">Next Judge</a>
+  <!-- New Judge Modal -->
+  <div id="new-judge" class="modal">
+    <div class="modal-content">
+      <h4 class="center-align">Player 1 Judges This Round!</h4>
+    </div>
+  </div>
+  <!-- Game Winner Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#game-winner">Game Winner</a>
+  <!-- Game Winner Modal -->
+  <div id="game-winner" class="modal">
+    <div class="modal-content">
+      <h4 class="center-align">Player 2 Wins The Game!!!</h4>
+      <br>
+      <div class="center-align">
+        <img src="images/trophy.jpg" alt="trophy" id="trophy">
+      </div>
+      <br>
+    </div>
+  </div>
+
+  <!-- Gameboard -->
+  <br><br>
+  <div class="container" id="gameboard">
+    <!-- First Row -->
+    <div class="row">
+      <!-- First Gif -->
+      <div class="col s4">
+        <div class="gif-div" id="gif-1">1</div>
+        <div class="row">
+          <div class="col s12">
+            <div class="space-div">
+              <div class="player-space player-1" id="s1-p1"></div>
+              <div class="player-space player-2" id="s1-p2"></div>
+              <div class="player-space player-3" id="s1-p3"></div>
+              <div class="player-space player-4" id="s1-p4"></div>
+              <div class="player-space player-5" id="s1-p5"></div>
+              <div class="player-space player-6" id="s1-p6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Second Gif -->
+      <div class="col s4">
+        <div class="gif-div" id="gif-2">2</div>
+        <div class="row">
+          <div class="col s12">
+            <div class="space-div">
+              <div class="player-space player-1" id="s2-p1"></div>
+              <div class="player-space player-2" id="s2-p2"></div>
+              <div class="player-space player-3" id="s2-p3"></div>
+              <div class="player-space player-4" id="s2-p4"></div>
+              <div class="player-space player-5" id="s2-p5"></div>
+              <div class="player-space player-6" id="s2-p6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Third Gif -->
+      <div class="col s4">
+        <div class="gif-div" id="gif-3">3</div>
+        <div class="row">
+          <div class="col s12">
+            <div class="space-div">
+              <div class="player-space player-1" id="s3-p1"></div>
+              <div class="player-space player-2" id="s3-p2"></div>
+              <div class="player-space player-3" id="s3-p3"></div>
+              <div class="player-space player-4" id="s3-p4"></div>
+              <div class="player-space player-5" id="s3-p5"></div>
+              <div class="player-space player-6" id="s3-p6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Second Row -->
+    <div class="row">
+      <!-- Sixth Gif -->
+      <div class="col s4">
+        <div class="gif-div" id="gif-6">6</div>
+        <div class="row">
+          <div class="col s12">
+            <div class="space-div">
+              <div class="player-space player-1" id="s6-p1"></div>
+              <div class="player-space player-2" id="s6-p2"></div>
+              <div class="player-space player-3" id="s6-p3"></div>
+              <div class="player-space player-4" id="s6-p4"></div>
+              <div class="player-space player-5" id="s6-p5"></div>
+              <div class="player-space player-6" id="s6-p6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Fifth Gif -->
+      <div class="col s4">
+        <div class="gif-div" id="gif-5">5</div>
+        <div class="row">
+          <div class="col s12">
+            <div class="space-div">
+              <div class="player-space player-1" id="s5-p1"></div>
+              <div class="player-space player-2" id="s5-p2"></div>
+              <div class="player-space player-3" id="s5-p3"></div>
+              <div class="player-space player-4" id="s5-p4"></div>
+              <div class="player-space player-5" id="s5-p5"></div>
+              <div class="player-space player-6" id="s5-p6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Fourth Gif -->
+      <div class="col s4">
+        <div class="gif-div" id="gif-4">4</div>
+        <div class="row">
+          <div class="col s12">
+            <div class="space-div">
+              <div class="player-space player-1" id="s4-p1"></div>
+              <div class="player-space player-2" id="s4-p2"></div>
+              <div class="player-space player-3" id="s4-p3"></div>
+              <div class="player-space player-4" id="s4-p4"></div>
+              <div class="player-space player-5" id="s4-p5"></div>
+              <div class="player-space player-6" id="s4-p6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Third Row -->
+    <div class="row">
+      <!-- Seventh Gif -->
+      <div class="col s4">
+        <div class="gif-div" id="gif-7">7</div>
+        <div class="row">
+          <div class="col s12">
+            <div class="space-div">
+              <div class="player-space player-1" id="s7-p1"></div>
+              <div class="player-space player-2" id="s7-p2"></div>
+              <div class="player-space player-3" id="s7-p3"></div>
+              <div class="player-space player-4" id="s7-p4"></div>
+              <div class="player-space player-5" id="s7-p5"></div>
+              <div class="player-space player-6" id="s7-p6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Eighth Gif -->
+      <div class="col s4">
+        <div class="gif-div" id="gif-8">8</div>
+        <div class="row">
+          <div class="col s12">
+            <div class="space-div">
+              <div class="player-space player-1" id="s8-p1"></div>
+              <div class="player-space player-2" id="s8-p2"></div>
+              <div class="player-space player-3" id="s8-p3"></div>
+              <div class="player-space player-4" id="s8-p4"></div>
+              <div class="player-space player-5" id="s8-p5"></div>
+              <div class="player-space player-6" id="s8-p6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Ninth Gif -->
+      <div class="col s4">
+        <div class="gif-div" id="gif-9">9</div>
+        <div class="row">
+          <div class="col s12">
+            <div class="space-div">
+              <div class="player-space player-1" id="s9-p1"></div>
+              <div class="player-space player-2" id="s9-p1"></div>
+              <div class="player-space player-3" id="s9-p3"></div>
+              <div class="player-space player-4" id="s9-p4"></div>
+              <div class="player-space player-5" id="s9-p5"></div>
+              <div class="player-space player-6" id="s9-p6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fourth Row -->
+    <div class="row">
+      <!-- Winner's Space -->
+      <div class="col s4"></div>
+      <div class="col s4 center-align">
+        <div id="winner-div">WINNER</div>
+        <div class="row">
+          <div class="col s12">
+            <div class="space-div">
+              <div class="player-space player-1" id="s10-p1"></div>
+              <div class="player-space player-2" id="s10-p1"></div>
+              <div class="player-space player-3" id="s10-p3"></div>
+              <div class="player-space player-4" id="s10-p4"></div>
+              <div class="player-space player-5" id="s10-p5"></div>
+              <div class="player-space player-6" id="s10-p6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col s4"></div>
+    </div>
+  </div>
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Socket.io -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+  <!-- Materialize -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/gameboard.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
