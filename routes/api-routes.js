@@ -50,4 +50,34 @@ module.exports = function(app) {
       });
     }
   });
+
+  app.post("/game", function(req, res) {
+    db.Game.create({
+      boardName: req.body.roomname
+    })
+      .then(function(newBoard) {
+        for (i = 0 ; i < 10 ; ++i) {
+          db.Space.create({
+            gif: gif, //change when variable is known
+            value: i,
+            gameid: newBoard.id
+          })
+        };
+        res.redirect(307, `/game/${req.body.roomname}`);
+      })
+      .catch(function(err) {
+        res.status(401).json(err);
+      });
+  });
+
+  app.get("/game/:roomname", function() {
+    db.Game.findOne({
+      where: {
+        boardName: req.params.roomname
+      },
+      include: [db.Space]
+    }).then(newBoard => {
+      res.render("gameboard", newBoard);
+    })
+  })
 };
