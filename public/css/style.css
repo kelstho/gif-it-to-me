@@ -3,7 +3,8 @@
 }
 
 #gameboard {
-    width: 1000px;
+    width: 975px;
+    margin-left: 200px;
 }
 
 .gif-div, #winner-div {
@@ -55,6 +56,15 @@
 
 #game-winner {
     background-color: gold;
+}
+
+.arrow {
+    width: 30px;
+    margin-top: 75px;
+}
+
+.back-arrow {
+    transform: scalex(-1);
 }
 
 #trophy {
