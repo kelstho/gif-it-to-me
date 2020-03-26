@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   webAddress = "http://localhost:8080/gameBoard";
   var socket = io.connect(webAddress);
 
