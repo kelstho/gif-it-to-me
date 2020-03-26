@@ -4,8 +4,8 @@ $(document).ready(function() {
       .val()
       .trim();
     var players = $("#how-many-players")
-    .val()
-    .trim();
+      .val()
+      .trim();
     var boardData = {
       boardName: myBoard,
       playerNum: players
