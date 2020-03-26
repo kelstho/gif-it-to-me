@@ -9,6 +9,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    maxPlayers: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     judgeid: {
       type: DataTypes.INTEGER
     }
