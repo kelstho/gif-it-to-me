@@ -205,7 +205,7 @@
   <br><br>
   <div class="container" id="gameboard">
     <!-- First Row -->
-    <div class="row">
+    <div class="row" id="first-row">
       <!-- First Gif -->
       <div class="col s4">
         <div class="gif-div" id="gif-1">1</div>
@@ -267,8 +267,15 @@
         </div>
       </div>
     </div>
+    <!-- Down Arrow 1 -->
+    <div class="row arrow-row">
+      <div class="col s8 arrow-col"></div>
+      <div class="col s4 arrow-col">
+        <img src="images/down_arrow.png" alt="Down Arrow" class="down-arrow" id="down-1">
+      </div>
+    </div>
     <!-- Second Row -->
-    <div class="row">
+    <div class="row" id="second-row">
       <!-- Sixth Gif -->
       <div class="col s4">
         <div class="gif-div" id="gif-6">6</div>
@@ -330,8 +337,15 @@
         </div>
       </div>
     </div>
+    <!-- Down Arrow 2 -->
+    <div class="row arrow-row">
+      <div class="col s4 arrow-col">
+        <img src="images/down_arrow.png" alt="Down Arrow" class="down-arrow" id="down-2">
+      </div>
+      <div class="col s8 arrow-col"></div>
+    </div>
     <!-- Third Row -->
-    <div class="row">
+    <div class="row" id="third-row">
       <!-- Seventh Gif -->
       <div class="col s4">
         <div class="gif-div" id="gif-7">7</div>
@@ -396,8 +410,7 @@
     <!-- Fourth Row -->
     <div class="row">
       <!-- Winner's Space -->
-      <div class="col s4"></div>
-      <div class="col s4 center-align">
+      <div class="col s4 center-align" id="winner-col">
         <div id="winner-div">WINNER</div>
         <div class="row">
           <div class="col s12">
@@ -412,7 +425,6 @@
           </div>
         </div>
       </div>
-      <div class="col s4"></div>
     </div>
   </div>
   <!-- jQuery -->
