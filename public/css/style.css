@@ -3,7 +3,21 @@
 }
 
 #gameboard {
-    width: 1000px;
+    width: 975px;
+    padding-left: 40px;
+    padding-right: 70px;
+}
+
+.row {
+    margin-left: -42px;
+}
+
+#first-row, #second-row {
+    margin-bottom: 0px;
+}
+
+#third-row {
+    margin-bottom: 20px;
 }
 
 .gif-div, #winner-div {
@@ -55,6 +69,37 @@
 
 #game-winner {
     background-color: gold;
+}
+
+#winner-col {
+    margin-left: 339px;
+}
+
+.arrow {
+    width: 30px;
+    margin-top: 75px;
+    margin-left: 14px;
+    margin-right: -7px;
+}
+
+.back-arrow {
+    transform: scalex(-1);
+}
+
+.arrow-row, .arrow-col {
+    margin: 0px;
+}
+
+.down-arrow {
+    height: 30px;
+}
+
+#down-1 {
+    margin: -15px 0px 3px 196px;
+}
+
+#down-2 {
+    margin: -15px 0px 3px 94px;
 }
 
 #trophy {
