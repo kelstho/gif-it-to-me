@@ -1,6 +1,6 @@
 $(document).ready(function() {
   
-  $("#start-button").on("click", () => {
+  $("#start-button").on("click", function () {
     let newBoard = $("#make-game-input").val().trim();
     let players = $("#how-many-players").val().trim();
     let boardData = {
