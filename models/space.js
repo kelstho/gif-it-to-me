@@ -14,12 +14,12 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
-
-  Space.belongsTo(db.Game, {
-    foreignKey: {
-      allowNull: false
-    }
-  });
-
+  Space.associate = function(models) {
+    Space.belongsTo(models.Game, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   return Space;
 };
