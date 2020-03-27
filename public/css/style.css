@@ -1,8 +1,11 @@
 .header {
     font-family: 'Bungee Shade';
-    text-align: center;
     margin-top: 15px;
     margin-bottom: 5px;
+}
+
+#gameboard-header {
+    padding-left: 40px;
 }
 
 #ready-div {
@@ -11,7 +14,6 @@
 
 #gameboard {
     width: 975px;
-    /* margin-left: 225px; */
     padding-left: 30px;
     padding-right: 70px;
 }
