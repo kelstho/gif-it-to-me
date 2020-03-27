@@ -15,11 +15,12 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Player.belongsTo(db.Game, {
-    foreignKey: {
-      allowNull: false
-    }
-  });
-
+  Player.associate = function(models) {
+    Player.belongsTo(models.Game, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   return Player;
 };

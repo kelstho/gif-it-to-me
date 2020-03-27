@@ -18,17 +18,18 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Game.hasMany(db.Space, {
-    foreignKey: {
-      allowNull: false
-    }
-  });
+  Game.associate = function(models) {
+    Game.hasMany(models.Space, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
 
-  Game.hasMany(db.Player, {
-    foreignKey: {
-      allowNull: false
-    }
-  });
-
+    Game.hasMany(models.Player, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   return Game;
 };
