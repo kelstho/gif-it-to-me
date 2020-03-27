@@ -1,11 +1,17 @@
 body {
     background-color: #a6d7f5;
+    font-family: 'Concert One';
 }
 
 .header {
     font-family: 'Bungee Shade';
     margin-top: 15px;
     margin-bottom: 5px;
+}
+
+#make-game-header, 
+#join-game-header {
+    font-size: 45px;
 }
 
 #gameboard-header {
