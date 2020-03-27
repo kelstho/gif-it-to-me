@@ -8,6 +8,7 @@
   <title>Gif Me</title>
   <link rel="stylesheet" href="css/reset.css" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Bungee Shade' rel='stylesheet'>
   <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
@@ -15,7 +16,7 @@
   <!-- Modals -->
 
   <!-- Ready Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#ready-modal">Ready</a>
+  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#ready-modal">Ready</a> -->
   <!-- Ready Modal -->
   <div id="ready-modal" class="modal">
     <div class="modal-content center-align" id="ready-div">
@@ -23,7 +24,7 @@
     </div>
   </div>
   <!-- Waiting Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#waiting-modal">Waiting</a>
+  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#waiting-modal">Waiting</a> -->
   <!-- Waiting Modal -->
   <div id="waiting-modal" class="modal">
     <div class="modal-content">
@@ -37,7 +38,7 @@
     </div>
   </div>
   <!-- Round Judge Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#first-judge">Round Judge</a>
+  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#first-judge">Round Judge</a> -->
   <!-- Round Judge Modal -->
   <div id="first-judge" class="modal">
     <div class="modal-content">
@@ -49,7 +50,7 @@
     </div>
   </div>
   <!-- Write Caption Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#write-modal">Caption</a>
+  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#write-modal">Caption</a> -->
   <!-- Write Caption Modal -->
   <div id="write-modal" class="modal modal-fixed-footer">
     <div class="modal-content">
@@ -76,7 +77,7 @@
     </div>
   </div>
   <!-- Judge Waits Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#judge-waits">Judge Waits</a>
+  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#judge-waits">Judge Waits</a> -->
   <!-- Judge Waits Modal -->
   <div id="judge-waits" class="modal">
     <div class="modal-content">
@@ -90,7 +91,7 @@
     </div>
   </div>
   <!-- Judging Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#judge-modal">Judging</a>
+  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#judge-modal">Judging</a> -->
   <!-- Judging Modal -->
   <div id="judge-modal" class="modal modal-fixed-footer">
     <div class="modal-content">
@@ -116,7 +117,7 @@
     </div>
   </div>
   <!-- Players Wait Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#players-wait">Players Wait</a>
+  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#players-wait">Players Wait</a> -->
   <!-- Players Wait Modal -->
   <div id="players-wait" class="modal">
     <div class="modal-content">
@@ -129,7 +130,7 @@
     </div>
   </div>
   <!-- Round Winner Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#round-winner">Round Winner</a>
+  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#round-winner">Round Winner</a> -->
   <!-- Round Winner Modal -->
   <div id="round-winner" class="modal">
     <div class="modal-content">
@@ -147,7 +148,7 @@
     </div>
   </div>
   <!-- Game Winner Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#game-winner">Game Winner</a>
+  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#game-winner">Game Winner</a> -->
   <!-- Game Winner Modal -->
   <div id="game-winner" class="modal">
     <div class="modal-content">
@@ -161,14 +162,20 @@
   </div>
 
   <!-- Gameboard -->
-  <br><br>
+
   <div class="container" id="gameboard">
+    <!-- Header -->
+    <div class="row center-align" id="gameboard-header">
+      <div class="col s12">
+        <h1 class="header">Gif Me</h1>
+      </div>
+    </div>
     <!-- First Row -->
-    <div class="row" id="first-row">
+    <div class="row game-row" id="first-row">
       <!-- First Gif -->
       <div class="col s4">
         <div class="gif-div" id="gif-1">1</div>
-        <div class="row">
+        <div class="row game-row">
           <div class="col s10">
             <div class="space-div">
               <div class="player-space player-1" id="s1-p1"></div>
@@ -183,14 +190,14 @@
       </div>
       <!-- Arrow 1 -->
       <div class="col">
-        <div class="row">
+        <div class="row game-row">
           <img src="images/arrow.png" alt="Arrow" class="arrow">
         </div>
       </div>
       <!-- Second Gif -->
       <div class="col s4">
         <div class="gif-div" id="gif-2">2</div>
-        <div class="row">
+        <div class="row game-row">
           <div class="col s12">
             <div class="space-div">
               <div class="player-space player-1" id="s2-p1"></div>
@@ -205,14 +212,14 @@
       </div>
       <!-- Arrow 2 -->
       <div class="col">
-        <div class="row">
+        <div class="row game-row">
           <img src="images/arrow.png" alt="Arrow" class="arrow">
         </div>
       </div>
       <!-- Third Gif -->
       <div class="col s3">
         <div class="gif-div" id="gif-3">3</div>
-        <div class="row">
+        <div class="row game-row">
           <div class="col s12">
             <div class="space-div">
               <div class="player-space player-1" id="s3-p1"></div>
@@ -227,18 +234,18 @@
       </div>
     </div>
     <!-- Down Arrow 1 -->
-    <div class="row arrow-row">
+    <div class="row arrow-row game-row">
       <div class="col s8 arrow-col"></div>
       <div class="col s4 arrow-col">
         <img src="images/down_arrow.png" alt="Down Arrow" class="down-arrow" id="down-1">
       </div>
     </div>
     <!-- Second Row -->
-    <div class="row" id="second-row">
+    <div class="row game-row" id="second-row">
       <!-- Sixth Gif -->
       <div class="col s4">
         <div class="gif-div" id="gif-6">6</div>
-        <div class="row">
+        <div class="row game-row">
           <div class="col s12">
             <div class="space-div">
               <div class="player-space player-1" id="s6-p1"></div>
@@ -253,14 +260,14 @@
       </div>
       <!-- Arrow 3 -->
       <div class="col">
-        <div class="row">
+        <div class="row game-row">
           <img src="images/arrow.png" alt="Back Arrow" class="arrow back-arrow">
         </div>
       </div>
       <!-- Fifth Gif -->
       <div class="col s4">
         <div class="gif-div" id="gif-5">5</div>
-        <div class="row">
+        <div class="row game-row">
           <div class="col s12">
             <div class="space-div">
               <div class="player-space player-1" id="s5-p1"></div>
@@ -275,14 +282,14 @@
       </div>
       <!-- Arrow 4 -->
       <div class="col">
-        <div class="row">
+        <div class="row game-row">
           <img src="images/arrow.png" alt="Back Arrow" class="arrow back-arrow">
         </div>
       </div>
       <!-- Fourth Gif -->
       <div class="col s3">
         <div class="gif-div" id="gif-4">4</div>
-        <div class="row">
+        <div class="row game-row">
           <div class="col s12">
             <div class="space-div">
               <div class="player-space player-1" id="s4-p1"></div>
@@ -297,18 +304,18 @@
       </div>
     </div>
     <!-- Down Arrow 2 -->
-    <div class="row arrow-row">
+    <div class="row arrow-row game-row">
       <div class="col s4 arrow-col">
         <img src="images/down_arrow.png" alt="Down Arrow" class="down-arrow" id="down-2">
       </div>
       <div class="col s8 arrow-col"></div>
     </div>
     <!-- Third Row -->
-    <div class="row" id="third-row">
+    <div class="row game-row" id="third-row">
       <!-- Seventh Gif -->
       <div class="col s4">
         <div class="gif-div" id="gif-7">7</div>
-        <div class="row">
+        <div class="row game-row">
           <div class="col s12">
             <div class="space-div">
               <div class="player-space player-1" id="s7-p1"></div>
@@ -323,14 +330,14 @@
       </div>
       <!-- Arrow 5 -->
       <div class="col">
-        <div class="row">
+        <div class="row game-row">
           <img src="images/arrow.png" alt="Arrow" class="arrow">
         </div>
       </div>
       <!-- Eighth Gif -->
       <div class="col s4">
         <div class="gif-div" id="gif-8">8</div>
-        <div class="row">
+        <div class="row game-row">
           <div class="col s12">
             <div class="space-div">
               <div class="player-space player-1" id="s8-p1"></div>
@@ -345,14 +352,14 @@
       </div>
       <!-- Arrow 6 -->
       <div class="col">
-        <div class="row">
+        <div class="row game-row">
           <img src="images/arrow.png" alt="Arrow" class="arrow">
         </div>
       </div>
       <!-- Ninth Gif -->
       <div class="col s3">
         <div class="gif-div" id="gif-9">9</div>
-        <div class="row">
+        <div class="row game-row">
           <div class="col s12">
             <div class="space-div">
               <div class="player-space player-1" id="s9-p1"></div>
@@ -367,11 +374,11 @@
       </div>
     </div>
     <!-- Fourth Row -->
-    <div class="row">
+    <div class="row game-row">
       <!-- Winner's Space -->
       <div class="col s4 center-align" id="winner-col">
         <div id="winner-div">WINNER</div>
-        <div class="row">
+        <div class="row game-row">
           <div class="col s12">
             <div class="space-div">
               <div class="player-space player-1" id="s10-p1"></div>
