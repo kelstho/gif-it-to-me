@@ -43,6 +43,7 @@ db.sequelize.sync().then(function() {
           if (result.changedRows === 0) {
             //what to do with error here
             //return res.status(404).end();
+            //
           }
           io.socket.emit(app.gameName, { playerWinner: data.playerWinner });
         }
