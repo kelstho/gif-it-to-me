@@ -18,7 +18,7 @@ $(document).ready(function() {
     }
   });
 
-  var form = $("#captions-form");
+  // var form = $("#captions-form");
 
   var captions = {
     caption1: {
@@ -63,10 +63,11 @@ $(document).ready(function() {
   });
 
   //start round trigger
-  function startRound () {
+  function startRound() {
     $("#new-judge").modal("open");
-    $("#caption-form").append();
   }
+
+  startRound();
 
   //caption phase
   function captioning() {
@@ -74,7 +75,7 @@ $(document).ready(function() {
     var time = 40;
     var timer = setInterval(function() {
       $(".timer").text(time);
-      time = --time
+      time = --time;
     }, 1000);
     setTimeout(function() {
       player.caption = $("#textarea1").val();
@@ -87,6 +88,8 @@ $(document).ready(function() {
       console.log(player.caption);
     }, 41000);
   }
+
+  captioning();
 
   //judge phase
   function judging() {
@@ -110,7 +113,7 @@ $(document).ready(function() {
     // $("#mySpan").attr({ class: "caption-option", dataPlayer: "player1" });
     // $("#mySpan").text("hello!");
     $("#judge-modal").modal("open");
-  };
+  }
 
   $(document).on("click", ".caption-option", function() {
     var winner = $(this).attr("dataPlayer");
@@ -120,7 +123,7 @@ $(document).ready(function() {
   judging();
 
   //winner declaration
-    //game win check
+  //game win check
 
   //game winner
 
