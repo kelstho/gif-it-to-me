@@ -26,9 +26,58 @@ module.exports = function(app) {
   app.get("/gameBoard", function(req, res) {
     app.gameName = req.query.gameName;
     res.sendFile(path.join(__dirname, "../public/gameboard.html"));
-    db.Game.findOne({ boardName: gameName });
+    db.Game.findOne({ boardName: app.gameName });
     // res.json({
     //   gameName: req.query.gameName
     // });
+  });
+  app.get("/api/getSpace", function(req, res) {
+    db.Space.findOne({
+      where: {
+        currentJudge: req.params.currentJudge
+        //this returns the current Judge?????
+        //update this for what this query is for.
+      }
+    }).then(function(result) {
+      res.json(result);
+    });
+  });
+  app.post("/creategame", function(req, res) {
+    var gameData = req.body;
+    db.create(
+      ["gameName", "playerNum"],
+      [gameData.boardName, gameData.playerNum],
+      function(result) {
+        if (result.changedRows === 0) {
+          return res.status(404).end();
+        }
+        res.redirect(
+          "http://localhost:8080/gameboard?gameName=" +
+            gameData.boardName +
+            "&playerName=Player1"
+        );
+      }
+    );
+  });
+  var playerNames = ["Player2", "Player3", "Player4", "Player5", "Player6"];
+  var i = 0;
+  app.post("/join", function(req, res) {
+    var gameData = req.body;
+    db.create(
+      ["gameName", playerNames[i]],
+      [gameData.boardName, gameData.playerName],
+      function(result) {
+        if (result.changedRows === 0) {
+          return res.status(404).end();
+        }
+        res.redirect(
+          "http://localhost:8080/gameboard?gameName=" +
+            gameData.boardName +
+            "&playerName=" +
+            playerNames[i]
+        );
+      }
+    );
+    i++;
   });
 };
