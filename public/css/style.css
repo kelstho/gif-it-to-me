@@ -1,7 +1,30 @@
+body {
+    background-color: #a6d7f5;
+    font-family: 'Concert One';
+}
+
 .header {
     font-family: 'Bungee Shade';
     margin-top: 15px;
     margin-bottom: 5px;
+}
+
+#make-game-header, 
+#join-game-header {
+    font-size: 45px;
+}
+
+::placeholder {
+    color: darkgray;
+}
+
+.input-field input[type=text].valid {
+    border-bottom: 1px solid #dc9169;
+    box-shadow: 0 1px 0 0 #dc9169;
+}
+
+#start-button, #join-button {
+    background-color: #dc9169;
 }
 
 #gameboard-header {
@@ -37,7 +60,7 @@
 }
 
 #winner-div {
-    background-color: gold;
+    background-color: #f5e9a6;
 }
 
 .space-div {
@@ -54,31 +77,31 @@
 }
 
 .player-1 {
-    background-color: red;
+    background-color: #f5c2a6;
 }
 
 .player-2 {
-    background-color: blue;
+    background-color: #dca6f5;
 }
 
 .player-3 {
-    background-color: yellow;
+    background-color: #bef5a6;
 }
 
 .player-4 {
-    background-color: green;
+    background-color: #69b0dc;
 }
 
 .player-5 {
-    background-color: orange;
+    background-color: #dccb69;
 }
 
 .player-6 {
-    background-color: purple;
+    background-color: #dc7569;
 }
 
 #game-winner {
-    background-color: gold;
+    background-color: #f5e9a6;
 }
 
 #winner-col {
@@ -105,7 +128,7 @@
 }
 
 #down-1 {
-    margin: -15px 0px 3px 196px;
+    margin: -15px 0px 3px 192px;
 }
 
 #down-2 {
