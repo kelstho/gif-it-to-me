@@ -9,9 +9,21 @@ body {
     margin-bottom: 5px;
 }
 
+#index-header {
+    margin-bottom: 0px;
+}
+
 #make-game-header, 
 #join-game-header {
     font-size: 45px;
+}
+
+#make-game-header {
+    margin-top: 15px;
+}
+
+#join-game-header {
+    margin-bottom: 0px;
 }
 
 ::placeholder {
@@ -25,6 +37,10 @@ body {
 
 #start-button, #join-button {
     background-color: #dc9169;
+}
+
+#join-game-input-row {
+    margin-top: 0px;
 }
 
 #gameboard-header {
