@@ -2,40 +2,22 @@ $(document).ready(function() {
   // webAddress = "http://localhost:8080/gameBoard";
   // var socket = io.connect(webAddress);
 
-  // btn.addEventListener("click", function() {
-  //   socket.emit("chat", {
-  //     message: message.value,
-  //     handle: handle.value
-  //   });
-  // });
-
-  socket.on("caption", function(data) {
-    for (key in captions) {
-      if (!captions[key]) {
-        caption[key] = data;
-        return;
-      }
-    }
-  });
-
-  // var form = $("#captions-form");
-
   var captions = {
     caption1: {
       player: "player1",
-      caption: "a"
+      caption: "How I felt watching Game of Thrones season 1"
     },
     caption2: {
       player: "player2",
-      caption: "b"
+      caption:
+        "Be careful ,son. I hear this golf course eats annoying little brats."
     },
     caption3: {
       player: "player3",
-      caption: "c"
+      caption: "Ever wonder how someone develops a phobia of golf?"
     },
     caption4: false,
-    caption5: false,
-    caption6: false
+    caption5: false
   };
 
   var player = {
@@ -44,30 +26,149 @@ $(document).ready(function() {
     judge: false
   };
 
-  // $("#write-modal").modal({
-  //   onCloseEnd: function() {
-  //     console.log("modal closed");
-  //   }
-  // })
-  $(".modal").modal();
+  var testResponses = {
+    gifs9s: [
+      {
+        gif: "https://media.giphy.com/media/btxze9OUeiPbW/giphy_s.gif",
+        value: 1
+      },
+      {
+        gif: "https://media.giphy.com/media/111LSMM1ICPqBq/giphy_s.gif",
+        value: 2
+      },
+      {
+        gif: "https://media.giphy.com/media/HSHkYDtrgGmvm/giphy_s.gif",
+        value: 3
+      },
+      {
+        gif: "https://media.giphy.com/media/ox3bJnm6Nim3K/giphy_s.gif",
+        value: 4
+      },
+      {
+        gif: "https://media.giphy.com/media/xu6rdUiog9kek/giphy_s.gif",
+        value: 5
+      },
+      {
+        gif: "https://media.giphy.com/media/hC7hhvggNdbMc/giphy_s.gif",
+        value: 6
+      },
+      {
+        gif: "https://media.giphy.com/media/KhV4QFqOslHHi/giphy_s.gif",
+        value: 7
+      },
+      {
+        gif: "https://media.giphy.com/media/mobBfcylWfq2k/giphy_s.gif",
+        value: 8
+      },
+      {
+        gif: "https://media.giphy.com/media/brjJHcjSkifte/giphy_s.gif",
+        value: 9
+      }
+    ]
+  };
+
+  $("#ready-modal").modal({
+    onCloseEnd: function() {
+      console.log("modal closed");
+    },
+    dismissable: false
+  });
+
+  $("#waiting-modal").modal({
+    onCloseEnd: function() {
+      console.log("modal closed");
+    }
+  });
+
+  $("#first-judge").modal({
+    onCloseEnd: function() {
+      console.log("modal closed");
+    },
+    dismissable: false
+  });
+
+  $("#write-modal").modal({
+    onCloseEnd: function() {
+      console.log("modal closed");
+    },
+    dismissable: false
+  });
+
+  $("#judge-waits").modal({
+    onCloseEnd: function() {
+      console.log("modal closed");
+    }
+  });
+
+  $("#judge-modal").modal({
+    onCloseEnd: function() {
+      console.log("modal closed");
+    },
+    dismissable: false
+  });
+
+  $("#players-wait").modal({
+    onCloseEnd: function() {
+      console.log("modal closed");
+    }
+  });
+
+  $("#round-winner").modal({
+    onCloseEnd: function() {
+      console.log("modal closed");
+    }
+  });
+
+  $("#game-winner").modal({
+    onCloseEnd: function() {
+      console.log("modal closed");
+    }
+  });
+  // $(".modal").modal();
+
+  //on load populate spaces
+
+  function makeBoard(gif) {
+    var space = $("#gif-" + gif.value);
+    var img = $("<img>");
+    img.attr({
+      src: gif.gif,
+      class: "gif-div"
+    });
+    space.text("");
+    space.append(img);
+  }
+
+  testResponses.gifs9s.forEach(makeBoard);
+
+  // $.get("/api/getGifs").then(function(response) {
+  //   console.log(response);
+  //   response.forEach(makeBoard);
+  // });
 
   //ready up
   $(document).on("click", "#ready", function() {
-    //socket instead
-    //prevent modal close
-  });
-
-  //on load populate spaces
-  $.get("/api/getGifs").then(function(response) {
-    console.log(response);
+    // socket.emit("caption", {
+    //   player: player.handle,
+    //   caption: player.caption
+    // });
   });
 
   //start round trigger
   function startRound() {
-    $("#new-judge").modal("open");
+    $("#first-judge").modal("open");
+    // $.get("/api/getSpace").then(function(response) {
+    //   $(".moving-gif").attr("src", response.gif);
+    // })
+    $(".moving-gif").attr(
+      "src",
+      "https://media.giphy.com/media/3VAQRS2XmgF1u/giphy.gif"
+    );
+    setTimeout(function() {
+      $("#first-judge").modal("close");
+      captioning();
+    }, 5000);
   }
-
-  startRound();
 
   //caption phase
   function captioning() {
@@ -78,49 +179,38 @@ $(document).ready(function() {
       time = --time;
     }, 1000);
     setTimeout(function() {
-      player.caption = $("#textarea1").val();
+      player.caption = $("#caption").val();
       clearInterval(timer);
       $("#write-modal").modal("close");
-      socket.emit("caption", {
-        player: player.handle,
-        caption: player.caption
-      });
+      // socket.emit("caption", {
+      //   player: player.handle,
+      //   caption: player.caption
+      // });
       console.log(player.caption);
+      judging();
     }, 41000);
   }
 
-  captioning();
-
   //judge phase
   function judging() {
-    // for (key in captions) {
-    //   if (captions[key]) {
-    //     var p = $("<p>");
-    //     var label = $("<label>");
-    //     var input = $("<input>");
-    //     var span = $("<span>");
-    //     var br = $("<br>");
-    //     label.attr({ class: "filed-in", type: "checkbox" });
-    //     p.attr({ class: "caption-option", id: captions[key].player });
-    //     span.text(captions[key].caption);
-    //     input.append(span);
-    //     label.append(input);
-    //     p.append(label);
-    //     form.append(p);
-    //     form.append(br);
-    //   }
-    // };
-    // $("#mySpan").attr({ class: "caption-option", dataPlayer: "player1" });
-    // $("#mySpan").text("hello!");
+    var capNum = 1;
+    for (key in captions) {
+      if (captions[key]) {
+        $("#caption-" + capNum).text(captions[key].caption);
+        $("#caption-" + capNum).attr("dataPlayer", captions[key].player);
+        capNum = ++capNum;
+      }
+    }
     $("#judge-modal").modal("open");
   }
 
-  $(document).on("click", ".caption-option", function() {
+  $(document).on("click", ".judging-caption", function() {
     var winner = $(this).attr("dataPlayer");
     console.log(winner);
+    $("#judge-modal").modal("close");
   });
 
-  judging();
+  startRound();
 
   //winner declaration
   //game win check
