@@ -25,6 +25,7 @@ body {
 
 #start-button, #join-button {
     background-color: #dc9169;
+    cursor:pointer;
 }
 
 #gameboard-header {
@@ -145,4 +146,8 @@ body {
     line-height: 1.3;
     text-align: center;
     color: #5D6D7E;
+}
+
+#how-many-players{
+    cursor:pointer;
 }
