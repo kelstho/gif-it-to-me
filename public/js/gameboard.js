@@ -1,6 +1,11 @@
 $(document).ready(function() {
-  // webAddress = "http://localhost:8080/gameBoard";
-  // var socket = io.connect(webAddress);
+  webAddress = "http://localhost:8080";
+  var socket = io.connect(webAddress);
+  socket.on("game1", function(data) {
+    console.log(data.judge + " " + data.player + " " + data.caption);
+    //judging();
+    //trigger judging here if data.judge = the player that is the judge????
+  });
 
   var captions = {
     caption1: {
@@ -20,11 +25,11 @@ $(document).ready(function() {
     caption5: false
   };
 
-  var player = {
-    handle: "player x",
-    caption: "",
-    judge: false
-  };
+  // var player = {
+  //   handle: "player x",
+  //   caption: "",
+  //   judge: false
+  // };
 
   var testResponses = {
     gifs9s: [
@@ -179,14 +184,15 @@ $(document).ready(function() {
       time = --time;
     }, 1000);
     setTimeout(function() {
-      player.caption = $("#caption").val();
+      caption = $("#caption").val();
       clearInterval(timer);
       $("#write-modal").modal("close");
-      // socket.emit("caption", {
-      //   player: player.handle,
-      //   caption: player.caption
-      // });
-      console.log(player.caption);
+      socket.emit("caption", {
+        player: player.handle,
+        //changed this from player.handle, and player.caption
+        caption: caption
+      });
+      console.log(caption);
       judging();
     }, 41000);
   }

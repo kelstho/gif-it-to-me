@@ -35,20 +35,28 @@ db.sequelize.sync().then(function() {
       //NEED TO change this!! This is for all sockets
       io.sockets.emit("chat", data);
     });
-    socket.on(app.gameName, function(data) {
-      db.create(
-        ["gameName", "playerWinner"],
-        [data.boardName, data.playerWinner],
-        function(result) {
-          if (result.changedRows === 0) {
-            //what to do with error here
-            //return res.status(404).end();
-            //
-          }
-          io.socket.emit(app.gameName, { playerWinner: data.playerWinner });
-        }
-      );
-      io.sockets.emit(app.gameName, data);
+    //socket.on(app.gameName, function(data) {
+    socket.on("caption", function(data) {
+      console.log(data.handle + " " + data.caption);
+      // db.create(
+      //   ["gameName", "playerWinner"],
+      //   [data.boardName, data.playerWinner],
+      //   function(result) {
+      //     if (result.changedRows === 0) {
+      //       //what to do with error here
+      //       //return res.status(404).end();
+      //       //
+      //     }
+
+      //     });
+      io.sockets.emit("game1", {
+        //could use app.gameName here but hardcoded for now
+        judge: "Player1",
+        player: data.handle,
+        caption: data.caption
+      });
+
+      //io.sockets.emit(app.gameName, data);
     });
   });
 });
