@@ -95,6 +95,11 @@ body {
     background-color: #f5e9a6;
 }
 
+#winner-text {
+    font-size: 35px;
+    padding-top: 45px;
+}
+
 .space-div {
     height: 20px;
     width: 300px;
