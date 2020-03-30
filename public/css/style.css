@@ -118,6 +118,26 @@ body {
     background-color: #f5e9a6;
 }
 
+#caption-1 {
+    color: #69b0dc;
+}
+
+#caption-2 {
+   color: #dc7569;
+}
+
+#caption-3 {
+   color: #dca6f5;
+}
+
+#caption-4 {
+    color: #dccb69;
+}
+
+#caption-5 {
+    color: darkblue;
+}
+
 #winner-col {
     margin-left: 339px;
 }
