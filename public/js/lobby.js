@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('.modal').modal();
+  $(".modal").modal();
 
   $("#start-button").on("click", function() {
     var myBoard = $("#make-game-input")
