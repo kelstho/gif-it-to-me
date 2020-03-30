@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  $(".modal").modal();
+
   $("#start-button").on("click", function() {
     var myBoard = $("#make-game-input")
       .val()
