@@ -30,13 +30,30 @@ body {
     color: darkgray;
 }
 
-.input-field input[type=text].valid {
-    border-bottom: 1px solid #dc9169;
-    box-shadow: 0 1px 0 0 #dc9169;
+#rules-button {
+    font-family: 'Concert One';
+    background-color: #b5a6f5;
+    margin-top: 10px;
+    margin-bottom: -5px;
+    cursor: pointer;
 }
 
-#start-button, #join-button {
+#game-rules-header {
+    color: #b5a6f5;
+}
+
+#game-rules {
+    font-size: 18px;
+}
+
+#start-button {
+    background-color: #69dc95;
+    cursor: pointer;
+}
+
+#join-button {
     background-color: #dc9169;
+    cursor:pointer;
 }
 
 #join-game-input-row {
@@ -70,18 +87,20 @@ body {
 }
 
 .gif-div, #winner-div {
-    border: solid;
     height: 175px;
-    width: 300px;
+    width: 294px;
 }
 
 #winner-div {
     background-color: #f5e9a6;
 }
 
+#winner-text {
+    font-size: 35px;
+    padding-top: 45px;
+}
+
 .space-div {
-    border: solid;
-    border-top: none;
     height: 20px;
     width: 300px;
 }
@@ -120,6 +139,26 @@ body {
     background-color: #f5e9a6;
 }
 
+#caption-1 {
+    color: #69b0dc;
+}
+
+#caption-2 {
+   color: #dc7569;
+}
+
+#caption-3 {
+   color: #dca6f5;
+}
+
+#caption-4 {
+    color: #dccb69;
+}
+
+#caption-5 {
+    color: darkblue;
+}
+
 #winner-col {
     margin-left: 339px;
 }
@@ -127,8 +166,8 @@ body {
 .arrow {
     width: 30px;
     margin-top: 75px;
-    margin-left: 12px;
-    margin-right: -7px;
+    margin-left: 7px;
+    margin-right: -5px;
 }
 
 .back-arrow {
@@ -144,11 +183,11 @@ body {
 }
 
 #down-1 {
-    margin: -15px 0px 3px 192px;
+    margin: -15px 0px 3px 183px;
 }
 
 #down-2 {
-    margin: -15px 0px 3px 94px;
+    margin: -15px 0px 5px 91px;
 }
 
 #trophy {
@@ -161,4 +200,8 @@ body {
     line-height: 1.3;
     text-align: center;
     color: #5D6D7E;
+}
+
+#how-many-players, .judging-caption{
+    cursor:pointer;
 }

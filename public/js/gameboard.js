@@ -25,52 +25,14 @@ $(document).ready(function() {
     caption5: false
   };
 
-  // var player = {
-  //   handle: "player x",
-  //   caption: "",
-  //   judge: false
-  // };
-
-  var testResponses = {
-    gifs9s: [
-      {
-        gif: "https://media.giphy.com/media/btxze9OUeiPbW/giphy_s.gif",
-        value: 1
-      },
-      {
-        gif: "https://media.giphy.com/media/111LSMM1ICPqBq/giphy_s.gif",
-        value: 2
-      },
-      {
-        gif: "https://media.giphy.com/media/HSHkYDtrgGmvm/giphy_s.gif",
-        value: 3
-      },
-      {
-        gif: "https://media.giphy.com/media/ox3bJnm6Nim3K/giphy_s.gif",
-        value: 4
-      },
-      {
-        gif: "https://media.giphy.com/media/xu6rdUiog9kek/giphy_s.gif",
-        value: 5
-      },
-      {
-        gif: "https://media.giphy.com/media/hC7hhvggNdbMc/giphy_s.gif",
-        value: 6
-      },
-      {
-        gif: "https://media.giphy.com/media/KhV4QFqOslHHi/giphy_s.gif",
-        value: 7
-      },
-      {
-        gif: "https://media.giphy.com/media/mobBfcylWfq2k/giphy_s.gif",
-        value: 8
-      },
-      {
-        gif: "https://media.giphy.com/media/brjJHcjSkifte/giphy_s.gif",
-        value: 9
-      }
-    ]
+  var player = {
+    handle: "player x",
+    caption: "",
+    judge: false
   };
+
+  var playerData = JSON.parse(localStorage.getItem("playerData"));
+  player.handle = playerData.playerName;
 
   $("#ready-modal").modal({
     onCloseEnd: function() {
@@ -137,14 +99,16 @@ $(document).ready(function() {
     var space = $("#gif-" + gif.value);
     var img = $("<img>");
     img.attr({
-      src: gif.gif,
+      src: "https://media.giphy.com/media/" + gif.gif + "/giphy_s.gif",
       class: "gif-div"
     });
     space.text("");
     space.append(img);
   }
 
-  testResponses.gifs9s.forEach(makeBoard);
+  $.get("/api/newGame", playerData).then(function(result) {
+    result.Spaces.forEach(makeBoard);
+  });
 
   // $.get("/api/getGifs").then(function(response) {
   //   console.log(response);

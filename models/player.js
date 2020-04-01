@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     currentspacevalue: {
       type: DataTypes.INTEGER,
-      default: 0
+      defaultValue: 1
     }
   });
 

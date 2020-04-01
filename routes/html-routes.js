@@ -5,32 +5,21 @@ var db = require("../models");
 //var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
-  //newGame will used the passed object to create a new row in database ???
-  app.post("/api/newGame", function(req, res) {
-    var newGameName = req.body;
-    db.create(["gameName"], [newGameName], function(result) {
-      res.json({ id: result.insertId });
+  app.get("/api/newGame", function(req, res) {
+    console.log(req.query);
+    db.Game.findOne({
+      where: {
+        boardName: req.query.boardName
+      },
+      include: db.Space
+    }).then(function(result) {
+      res.json(result);
     });
   });
-  //submitMeme requires the boardName, position, and meme be passed in
-  //if it doesn't it'll return a 404, else 200
-  app.post("/api/submitMeme", function(req, res) {
-    db.create(
-      ["gameBoard", "position", "meme"],
-      [req.body.boardName, req.body.postion, req.body.meme],
-      function(result) {
-        if (result.changedRows === 0) {
-          return res.status(404).end();
-        }
-        res.status(200).end();
-      }
-    );
-  });
-  //gameboard will serve gameboard.html regardless of what is passed
+
   app.get("/gameBoard", function(req, res) {
-    app.gameName = req.query.gameName;
     res.sendFile(path.join(__dirname, "../public/gameboard.html"));
-    db.Game.findOne({ boardName: app.gameName });
+
   });
   //getSpace returns the row of db Space where currentJudge equals
   //the parameter that was passed in
@@ -49,43 +38,49 @@ module.exports = function(app) {
   //playerNum. That then creates a row in db ???
   app.post("/creategame", function(req, res) {
     var gameData = req.body;
-    db.create(
-      ["gameName", "playerNum"],
-      [gameData.boardName, gameData.playerNum],
-      function(result) {
-        if (result.changedRows === 0) {
-          return res.status(404).end();
-        }
-        res.redirect(
-          "http://localhost:8080/gameboard?gameName=" +
-            gameData.boardName +
-            "&playerName=Player1"
-        );
-      }
-    );
+    db.Game.create({
+      boardName: gameData.boardName,
+      maxPlayers: gameData.playerNum
+    }).then(function(result) {
+      myGifs = [];
+      var i = 1;
+      gameData.gifs.forEach(function(myGif) {
+        var tempGif = {
+          gif: myGif,
+          value: i,
+          GameId: result.dataValues.id
+        };
+        myGifs.push(tempGif);
+        i = ++i;
+      });
+      console.log(myGifs);
+      db.Space.bulkCreate(myGifs);
+      res.redirect("/join/" + result.dataValues.boardName);
+    });
   });
-  var playerNames = ["Player2", "Player3", "Player4", "Player5", "Player6"];
-  var i = 0;
-  //join uses parameters passed after ? and needs to have boardName and
-  //playerName. Then creates a row in db ????
-  app.post("/join", function(req, res) {
-    var gameData = req.body;
-    db.create(
-      ["gameName", playerNames[i]],
-      [gameData.boardName, gameData.playerName],
-      function(result) {
-        if (result.changedRows === 0) {
-          return res.status(404).end();
-        }
-        res.redirect(
-          "http://localhost:8080/gameboard?gameName=" +
-            gameData.boardName +
-            "&playerName=" +
-            playerNames[i]
-        );
+  app.get("/join/:boardName", function(req, res) {
+    db.Game.findOne({
+      where: {
+        boardName: req.params.boardName
+      },
+      include: db.Player
+    }).then(function(result) {
+      var myPlayer = 1 + result.Players.length;
+      if (result.Players.length < result.dataValues.maxPlayers) {
+        db.Player.create({
+          name: "Player" + myPlayer,
+          GameId: result.dataValues.id
+        }).then(function(addPlayer) {
+          var response = {
+            boardName: result.dataValues.boardName,
+            playerName: addPlayer.dataValues.name
+          };
+          res.json(response);
+        });
+      } else {
+        res.status(405).end();
       }
-    );
-    i++;
+    });
   });
   //playerspaces finds all rows in and database spaces, and joins
   //on games, and returns all rows
