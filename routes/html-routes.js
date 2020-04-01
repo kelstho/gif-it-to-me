@@ -19,7 +19,6 @@ module.exports = function(app) {
 
   app.get("/gameBoard", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/gameboard.html"));
-
   });
   //getSpace returns the row of db Space where currentJudge equals
   //the parameter that was passed in
