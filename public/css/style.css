@@ -205,3 +205,7 @@ body {
 #how-many-players, .judging-caption{
     cursor:pointer;
 }
+
+#giphy-logo {
+    width: 55px;
+}
