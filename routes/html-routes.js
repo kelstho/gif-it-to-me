@@ -16,9 +16,12 @@ module.exports = function(app) {
       res.json(result);
     });
   });
+
   app.get("/gameBoard", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/gameboard.html"));
   });
+  //getSpace returns the row of db Space where currentJudge equals
+  //the parameter that was passed in
   app.get("/api/getSpace", function(req, res) {
     db.Space.findOne({
       where: {
@@ -30,6 +33,8 @@ module.exports = function(app) {
       res.json(result);
     });
   });
+  //creategame use parameters passed after? and needs to have boardName
+  //playerNum. That then creates a row in db ???
   app.post("/creategame", function(req, res) {
     var gameData = req.body;
     db.Game.create({
@@ -75,5 +80,35 @@ module.exports = function(app) {
         res.status(405).end();
       }
     });
+  });
+  //playerspaces finds all rows in and database spaces, and joins
+  //on games, and returns all rows
+  app.get("/api/playerspaces", function(req, res) {
+    //return table spaces column gif and Gameid/
+    //join table games and send judgeId
+    db.Space.findAll({
+      include: [
+        {
+          model: Game
+        }
+      ]
+    }).then(function(data) {
+      res.json(data);
+    });
+  });
+  //roundend takes object passed in on the url ? needs to have judgeId
+  //and boardName. So roundend?judgeId=1&boardName=exampleBoard
+  app.put("/api/roundEnd", function(req, res) {
+    //sending ID of winner, and GIF id
+    //update games judgeId/
+    //update spaces gif
+    db.Game.update(
+      { judgeId: req.body.judgeId },
+      { where: { boardname: req.body.boardName } }
+    ).then(function() {
+      res.json(req.body);
+    });
+
+    //return judgeId and gif
   });
 };

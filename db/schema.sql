@@ -8,7 +8,7 @@ CREATE TABLE `spaces` (
 
 CREATE TABLE `games` (
   `id` Int( 11 ) AUTO_INCREMENT NOT NULL,
-  `board_name` VARCHAR(255) NOT NULL,
+  `boardname` VARCHAR(255) NOT NULL,
   `judgeid` int (11),
 
   PRIMARY KEY ( `id` ) 
