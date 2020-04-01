@@ -124,7 +124,7 @@ module.exports = function(app) {
       console.log(result);
       db.Game.update(
         { judgeid: judgeUpdate },
-        { where: { id: req.body.boardName } }
+        { where: { boardName: req.body.boardName } }
       ).then(function(result) {
         console.log(result);
         db.Player.findOne({

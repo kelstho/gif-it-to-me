@@ -27,6 +27,8 @@ $(document).ready(function() {
         $("#round-winner").modal("open");
         if (player.handle === data.player) {
           player.judge = true;
+        } else {
+          player.judge = false;
         }
         var space = $("#gif-" + activeSpace.value);
         space.empty();
@@ -39,9 +41,10 @@ $(document).ready(function() {
         $(".player-space").attr("class", "player-space");
         var gameOver = false;
         data.allPlayers.forEach(function(player) {
+          var spaceUp = player.name.toLowerCase();
           $("#s" + player.currentspacevalue + "-p" + player.id).attr(
             "class",
-            "player-space " + "player-" + player.name
+            "player-space " + spaceUp
           );
           if (player.currentspacevalue === 10) {
             gameOver = true;
@@ -246,6 +249,7 @@ $(document).ready(function() {
   function captioning() {
     if (player.judge) {
       $("#judge-waits").modal("open");
+      var time = 40;
       var captionWait = setInterval(function() {
         var isReady = true;
         for (key in captions) {
@@ -258,7 +262,9 @@ $(document).ready(function() {
           $("#judge-waits").modal("close");
           judging();
         }
-      });
+        $(".timer").text(time);
+        time = --time;
+      }, 1000);
     } else {
       $("#write-modal").modal("open");
       var time = 40;
