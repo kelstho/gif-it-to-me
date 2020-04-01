@@ -41,7 +41,7 @@ $(document).ready(function() {
         data.allPlayers.forEach(function(player) {
           $("#s" + player.currentspacevalue + "-p" + player.id).attr(
             "class",
-            "player-space " + player.name
+            "player-space " + "player-" + player.name
           );
           if (player.currentspacevalue === 10) {
             gameOver = true;
