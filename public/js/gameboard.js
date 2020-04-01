@@ -80,7 +80,7 @@ $(document).ready(function() {
 
   var playerData = JSON.parse(localStorage.getItem("playerData"));
   player.handle = playerData.playerName;
-  $("#declarePlayer").text("Welcome " + player.handle);
+  $("#declare-player").text("Welcome " + player.handle);
 
   $("#ready-modal").modal({
     onCloseEnd: function() {

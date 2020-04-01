@@ -16,51 +16,40 @@
 <body>
   <!-- Modals -->
 
-  <!-- Ready Trigger -->
-  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#ready-modal">Ready</a> -->
   <!-- Ready Modal -->
   <div id="ready-modal" class="modal">
     <div class="modal-content center-align" id="ready-div">
+      <h4 class="center-align" id="declare-player"></h4>
+      <br><br>
       <a href="#!" class="modal-close waves-effect waves-light btn green darken-2" id="player-ready">Ready!</a>
     </div>
   </div>
-  <!-- Waiting Trigger -->
-  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#waiting-modal">Waiting</a> -->
   <!-- Waiting Modal -->
   <div id="waiting-modal" class="modal">
     <div class="modal-content">
-      <h5 class="center-align">You Are</h5>
-      <br>
       <div class="center-align">
-        <h4 id="player-assign">Player 1!</h4>
+        <h4 id="player-assign">Waiting for Other Players...</h4>
       </div>
-      <br>
-      <h5 class="center-align">Waiting for Other Players...</h5>
     </div>
   </div>
-  <!-- Round Judge Trigger -->
-  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#first-judge">Round Judge</a> -->
   <!-- Round Judge Modal -->
   <div id="first-judge" class="modal">
     <div class="modal-content">
       <h4 class="center-align">The Judge for this Round Is...</h4>
       <div class="center-align">
-        <h5 id="first-judge-player">Player 3!</h5>
+        <h5 id="first-judge-player"></h5>
       </div>
       <br>
     </div>
   </div>
-  <!-- Write Caption Trigger -->
-  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#write-modal">Caption</a> -->
   <!-- Write Caption Modal -->
   <div id="write-modal" class="modal modal-fixed-footer">
     <div class="modal-content">
       <h4 class="center-align">Write Your Caption!</h4>
-      <h5 class="center-align timer">(timer)</h5>
+      <h5 class="center-align timer"></h5>
       <br>
       <div class="center-align">
-        <img class="moving-gif"
-          src="https://media2.giphy.com/media/jqwBWMHrcyKb2wHJnK/200.gif?cid=ecf05e4780a5d6ccce9b7d5fb016cbe5a3a202da52733920&rid=200.gif">
+        <img class="moving-gif">
       </div>
       <div class="row">
         <form class="col s12">
@@ -74,30 +63,24 @@
       </div>
     </div>
   </div>
-  <!-- Judge Waits Trigger -->
-  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#judge-waits">Judge Waits</a> -->
   <!-- Judge Waits Modal -->
   <div id="judge-waits" class="modal">
     <div class="modal-content">
       <h4 class="center-align">Players Are Captioning...</h4>
       <div class="center-align">
-        <img class="moving-gif"
-          src="https://media2.giphy.com/media/jqwBWMHrcyKb2wHJnK/200.gif?cid=ecf05e4780a5d6ccce9b7d5fb016cbe5a3a202da52733920&rid=200.gif">
+        <img class="moving-gif">
       </div>
       <br>
-      <h5 class="center-align timer">(timer)</h5>
+      <h5 class="center-align timer"></h5>
     </div>
   </div>
-  <!-- Judging Trigger -->
-  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#judge-modal">Judging</a> -->
   <!-- Judging Modal -->
   <div id="judge-modal" class="modal modal-fixed-footer">
     <div class="modal-content">
       <h4 class="center-align">Pick The Best One</h4>
       <br>
       <div class="center-align">
-        <img class="moving-gif"
-          src="https://media2.giphy.com/media/jqwBWMHrcyKb2wHJnK/200.gif?cid=ecf05e4780a5d6ccce9b7d5fb016cbe5a3a202da52733920&rid=200.gif">
+        <img class="moving-gif">
       </div>
       <br>
       <div id="final-captions">
@@ -111,43 +94,34 @@
       </div>
     </div>
   </div>
-  <!-- Players Wait Trigger -->
-  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#players-wait">Players Wait</a> -->
   <!-- Players Wait Modal -->
   <div id="players-wait" class="modal">
     <div class="modal-content">
       <h4 class="center-align">Judge Is Picking...</h4>
       <div class="center-align">
-        <img class="moving-gif"
-          src="https://media2.giphy.com/media/jqwBWMHrcyKb2wHJnK/200.gif?cid=ecf05e4780a5d6ccce9b7d5fb016cbe5a3a202da52733920&rid=200.gif">
+        <img class="moving-gif">
       </div>
       <br>
     </div>
   </div>
-  <!-- Round Winner Trigger -->
-  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#round-winner">Round Winner</a> -->
   <!-- Round Winner Modal -->
   <div id="round-winner" class="modal">
     <div class="modal-content">
       <h4 class="center-align">The Winner of This Round Is...</h4>
       <div class="center-align">
-        <img class="moving-gif"
-          src="https://media2.giphy.com/media/jqwBWMHrcyKb2wHJnK/200.gif?cid=ecf05e4780a5d6ccce9b7d5fb016cbe5a3a202da52733920&rid=200.gif">
+        <img class="moving-gif">
       </div>
       <br>
       <div class="center-align">
-        <h5 id="round-winner-player">Player 1!</h5>
-        <p id="round-winner-caption">Bacon ipsum dolor amet bresaola cow shankle t-bone spare ribs pancetta. Burgdoggen
-          beef pork loin ham hock shankle ground round pancetta.</p>
+        <h5 id="round-winner-player"></h5>
+        <p id="round-winner-caption"></p>
       </div>
     </div>
   </div>
-  <!-- Game Winner Trigger -->
-  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#game-winner">Game Winner</a> -->
   <!-- Game Winner Modal -->
   <div id="game-winner" class="modal">
     <div class="modal-content">
-      <h4 class="center-align">Player 2 Wins The Game!!!</h4>
+      <h4 class="center-align" id="champ"></h4>
       <br>
       <div class="center-align">
         <img src="images/trophy.jpg" alt="trophy" id="trophy">
@@ -173,12 +147,12 @@
         <div class="row game-row">
           <div class="col s10">
             <div class="space-div">
-              <div class="player-space player-1" id="s1-p1"></div>
-              <div class="player-space player-2" id="s1-p2"></div>
-              <div class="player-space player-3" id="s1-p3"></div>
-              <div class="player-space player-4" id="s1-p4"></div>
-              <div class="player-space player-5" id="s1-p5"></div>
-              <div class="player-space player-6" id="s1-p6"></div>
+              <div class="player-space" id="s1-p1"></div>
+              <div class="player-space" id="s1-p2"></div>
+              <div class="player-space" id="s1-p3"></div>
+              <div class="player-space" id="s1-p4"></div>
+              <div class="player-space" id="s1-p5"></div>
+              <div class="player-space" id="s1-p6"></div>
             </div>
           </div>
         </div>
@@ -195,12 +169,12 @@
         <div class="row game-row">
           <div class="col s12">
             <div class="space-div">
-              <div class="player-space player-1" id="s2-p1"></div>
-              <div class="player-space player-2" id="s2-p2"></div>
-              <div class="player-space player-3" id="s2-p3"></div>
-              <div class="player-space player-4" id="s2-p4"></div>
-              <div class="player-space player-5" id="s2-p5"></div>
-              <div class="player-space player-6" id="s2-p6"></div>
+              <div class="player-space" id="s2-p1"></div>
+              <div class="player-space" id="s2-p2"></div>
+              <div class="player-space" id="s2-p3"></div>
+              <div class="player-space" id="s2-p4"></div>
+              <div class="player-space" id="s2-p5"></div>
+              <div class="player-space" id="s2-p6"></div>
             </div>
           </div>
         </div>
@@ -217,12 +191,12 @@
         <div class="row game-row">
           <div class="col s12">
             <div class="space-div">
-              <div class="player-space player-1" id="s3-p1"></div>
-              <div class="player-space player-2" id="s3-p2"></div>
-              <div class="player-space player-3" id="s3-p3"></div>
-              <div class="player-space player-4" id="s3-p4"></div>
-              <div class="player-space player-5" id="s3-p5"></div>
-              <div class="player-space player-6" id="s3-p6"></div>
+              <div class="player-space" id="s3-p1"></div>
+              <div class="player-space" id="s3-p2"></div>
+              <div class="player-space" id="s3-p3"></div>
+              <div class="player-space" id="s3-p4"></div>
+              <div class="player-space" id="s3-p5"></div>
+              <div class="player-space" id="s3-p6"></div>
             </div>
           </div>
         </div>
@@ -243,12 +217,12 @@
         <div class="row game-row">
           <div class="col s12">
             <div class="space-div">
-              <div class="player-space player-1" id="s6-p1"></div>
-              <div class="player-space player-2" id="s6-p2"></div>
-              <div class="player-space player-3" id="s6-p3"></div>
-              <div class="player-space player-4" id="s6-p4"></div>
-              <div class="player-space player-5" id="s6-p5"></div>
-              <div class="player-space player-6" id="s6-p6"></div>
+              <div class="player-space" id="s6-p1"></div>
+              <div class="player-space" id="s6-p2"></div>
+              <div class="player-space" id="s6-p3"></div>
+              <div class="player-space" id="s6-p4"></div>
+              <div class="player-space" id="s6-p5"></div>
+              <div class="player-space" id="s6-p6"></div>
             </div>
           </div>
         </div>
@@ -265,12 +239,12 @@
         <div class="row game-row">
           <div class="col s12">
             <div class="space-div">
-              <div class="player-space player-1" id="s5-p1"></div>
-              <div class="player-space player-2" id="s5-p2"></div>
-              <div class="player-space player-3" id="s5-p3"></div>
-              <div class="player-space player-4" id="s5-p4"></div>
-              <div class="player-space player-5" id="s5-p5"></div>
-              <div class="player-space player-6" id="s5-p6"></div>
+              <div class="player-space" id="s5-p1"></div>
+              <div class="player-space" id="s5-p2"></div>
+              <div class="player-space" id="s5-p3"></div>
+              <div class="player-space" id="s5-p4"></div>
+              <div class="player-space" id="s5-p5"></div>
+              <div class="player-space" id="s5-p6"></div>
             </div>
           </div>
         </div>
@@ -287,12 +261,12 @@
         <div class="row game-row">
           <div class="col s12">
             <div class="space-div">
-              <div class="player-space player-1" id="s4-p1"></div>
-              <div class="player-space player-2" id="s4-p2"></div>
-              <div class="player-space player-3" id="s4-p3"></div>
-              <div class="player-space player-4" id="s4-p4"></div>
-              <div class="player-space player-5" id="s4-p5"></div>
-              <div class="player-space player-6" id="s4-p6"></div>
+              <div class="player-space" id="s4-p1"></div>
+              <div class="player-space" id="s4-p2"></div>
+              <div class="player-space" id="s4-p3"></div>
+              <div class="player-space" id="s4-p4"></div>
+              <div class="player-space" id="s4-p5"></div>
+              <div class="player-space" id="s4-p6"></div>
             </div>
           </div>
         </div>
@@ -313,12 +287,12 @@
         <div class="row game-row">
           <div class="col s12">
             <div class="space-div">
-              <div class="player-space player-1" id="s7-p1"></div>
-              <div class="player-space player-2" id="s7-p2"></div>
-              <div class="player-space player-3" id="s7-p3"></div>
-              <div class="player-space player-4" id="s7-p4"></div>
-              <div class="player-space player-5" id="s7-p5"></div>
-              <div class="player-space player-6" id="s7-p6"></div>
+              <div class="player-space" id="s7-p1"></div>
+              <div class="player-space" id="s7-p2"></div>
+              <div class="player-space" id="s7-p3"></div>
+              <div class="player-space" id="s7-p4"></div>
+              <div class="player-space" id="s7-p5"></div>
+              <div class="player-space" id="s7-p6"></div>
             </div>
           </div>
         </div>
@@ -335,12 +309,12 @@
         <div class="row game-row">
           <div class="col s12">
             <div class="space-div">
-              <div class="player-space player-1" id="s8-p1"></div>
-              <div class="player-space player-2" id="s8-p2"></div>
-              <div class="player-space player-3" id="s8-p3"></div>
-              <div class="player-space player-4" id="s8-p4"></div>
-              <div class="player-space player-5" id="s8-p5"></div>
-              <div class="player-space player-6" id="s8-p6"></div>
+              <div class="player-space" id="s8-p1"></div>
+              <div class="player-space" id="s8-p2"></div>
+              <div class="player-space" id="s8-p3"></div>
+              <div class="player-space" id="s8-p4"></div>
+              <div class="player-space" id="s8-p5"></div>
+              <div class="player-space" id="s8-p6"></div>
             </div>
           </div>
         </div>
@@ -357,12 +331,12 @@
         <div class="row game-row">
           <div class="col s12">
             <div class="space-div">
-              <div class="player-space player-1" id="s9-p1"></div>
-              <div class="player-space player-2" id="s9-p1"></div>
-              <div class="player-space player-3" id="s9-p3"></div>
-              <div class="player-space player-4" id="s9-p4"></div>
-              <div class="player-space player-5" id="s9-p5"></div>
-              <div class="player-space player-6" id="s9-p6"></div>
+              <div class="player-space" id="s9-p1"></div>
+              <div class="player-space" id="s9-p1"></div>
+              <div class="player-space" id="s9-p3"></div>
+              <div class="player-space" id="s9-p4"></div>
+              <div class="player-space" id="s9-p5"></div>
+              <div class="player-space" id="s9-p6"></div>
             </div>
           </div>
         </div>
@@ -378,12 +352,12 @@
         <div class="row game-row">
           <div class="col s12">
             <div class="space-div">
-              <div class="player-space player-1" id="s10-p1"></div>
-              <div class="player-space player-2" id="s10-p1"></div>
-              <div class="player-space player-3" id="s10-p3"></div>
-              <div class="player-space player-4" id="s10-p4"></div>
-              <div class="player-space player-5" id="s10-p5"></div>
-              <div class="player-space player-6" id="s10-p6"></div>
+              <div class="player-space" id="s10-p1"></div>
+              <div class="player-space" id="s10-p1"></div>
+              <div class="player-space" id="s10-p3"></div>
+              <div class="player-space" id="s10-p4"></div>
+              <div class="player-space" id="s10-p5"></div>
+              <div class="player-space" id="s10-p6"></div>
             </div>
           </div>
         </div>

@@ -194,6 +194,10 @@ body {
     max-width: 200px;
 }
 
+.moving-gif {
+    width: 475px;
+}
+
 .judging-caption {
     margin-bottom: 12px;
     font-size: 16px;
