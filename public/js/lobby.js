@@ -32,6 +32,10 @@ $(document).ready(function() {
     var gameID = $("#join-game-input")
       .val()
       .trim();
-    $.get("/join/" + gameID);
+    $.get("/join/" + gameID).then(function(result) {
+      var playerData = JSON.stringify(result);
+      localStorage.setItem("playerData", playerData);
+      window.location.href = "/gameboard";
+    });
   });
 });

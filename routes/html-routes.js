@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 // Requiring path to so we can use relative routes to our HTML files
 var path = require("path");
 var db = require("../models");
@@ -23,14 +24,25 @@ module.exports = function(app) {
   //getSpace returns the row of db Space where currentJudge equals
   //the parameter that was passed in
   app.get("/api/getSpace", function(req, res) {
-    db.Space.findOne({
+    db.Game.findOne({
       where: {
-        currentJudge: req.params.currentJudge
-        //this returns the current Judge?????
-        //update this for what this query is for.
+        boardName: req.query.boardName
       }
     }).then(function(result) {
-      res.json(result);
+      db.Player.findOne({
+        where: {
+          name: "Player" + result.judgeid
+        }
+      }).then(function(result) {
+        db.Space.findOne({
+          where: {
+            value: result.currentspacevalue,
+            GameId: result.GameId
+          }
+        }).then(function(result) {
+          res.json(result);
+        });
+      });
     });
   });
   //creategame use parameters passed after? and needs to have boardName
@@ -81,34 +93,60 @@ module.exports = function(app) {
       }
     });
   });
-  //playerspaces finds all rows in and database spaces, and joins
-  //on games, and returns all rows
-  app.get("/api/playerspaces", function(req, res) {
-    //return table spaces column gif and Gameid/
-    //join table games and send judgeId
-    db.Space.findAll({
-      include: [
-        {
-          model: Game
-        }
-      ]
-    }).then(function(data) {
-      res.json(data);
-    });
-  });
   //roundend takes object passed in on the url ? needs to have judgeId
   //and boardName. So roundend?judgeId=1&boardName=exampleBoard
   app.put("/api/roundEnd", function(req, res) {
-    //sending ID of winner, and GIF id
-    //update games judgeId/
-    //update spaces gif
-    db.Game.update(
-      { judgeId: req.body.judgeId },
-      { where: { boardname: req.body.boardName } }
-    ).then(function() {
-      res.json(req.body);
+    var judgeUpdate;
+    switch (req.body.player) {
+      case "Player1":
+        judgeUpdate = 1;
+        break;
+      case "Player2":
+        judgeUpdate = 2;
+        break;
+      case "Player3":
+        judgeUpdate = 3;
+        break;
+      case "Player4":
+        judgeUpdate = 4;
+        break;
+      case "Player5":
+        judgeUpdate = 5;
+        break;
+      case "Player6":
+        judgeUpdate = 6;
+        break;
+    }
+    db.Space.update(
+      { gif: req.body.gif },
+      { where: { id: req.body.lastSpace } }
+    ).then(function(result) {
+      console.log(result);
+      db.Game.update(
+        { judgeid: judgeUpdate },
+        { where: { id: req.body.boardName } }
+      ).then(function(result) {
+        console.log(result);
+        db.Player.findOne({
+          where: { name: req.body.player }
+        }).then(function(result) {
+          var adjustedValue = 1 + result.currentspacevalue;
+          db.Player.update(
+            { currentspacevalue: adjustedValue },
+            { where: { id: result.id } }
+          ).then(function(result) {
+            console.log(result);
+            db.Game.findOne({
+              where: {
+                boardName: req.body.boardName
+              },
+              include: db.Player
+            }).then(function(result) {
+              res.json(result);
+            });
+          });
+        });
+      });
     });
-
-    //return judgeId and gif
   });
 };

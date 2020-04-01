@@ -31,9 +31,9 @@ db.sequelize.sync({ force: true }).then(function() {
     console.log("game name " + app.gameName);
     console.log("made connection", socket.id);
 
-    socket.on("chat", function(data) {
+    socket.on("game1", function(data) {
       //NEED TO change this!! This is for all sockets
-      io.sockets.emit("chat", data);
+      io.sockets.emit("game1", data);
     });
     //socket.on(app.gameName, function(data) {
     socket.on("caption", function(data) {
