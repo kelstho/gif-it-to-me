@@ -14,6 +14,6 @@ Successes: getting Socket.io to function correctly, getting the gifs to populate
 
 Future Development: Add optional themes for each game (cat gifs, truck gifs, food gifs, etc), create an ongoing scoreboard to keep between groups of friends/game rooms, incorporate social media (posting your high scores or favorite caption/gif combos)
 
-Deployed Site: https://kelstho.github.io/gif-it-to-me/
+Deployed Site: https://polar-savannah-75488.herokuapp.com/
 
 Creators: Evan LaFollette, Mark Stout, Kelly Thompson, Ashton Beaudoin
