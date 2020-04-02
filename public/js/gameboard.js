@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 $(document).ready(function() {
   webAddress = "http://localhost:8080";
-  var socket = io.connect(webAddress);
+  var socket = io();
   socket.on("game1", function(data) {
     console.log(data);
     switch (data.message) {
