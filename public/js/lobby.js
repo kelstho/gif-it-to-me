@@ -10,7 +10,7 @@ $(document).ready(function() {
       .trim();
     $.ajax({
       url:
-        "http://api.giphy.com/v1/gifs/trending?api_key=6o5OpL93nQFs2S386QaG6q1GPN1r02Ky"
+        "https://api.giphy.com/v1/gifs/trending?api_key=6o5OpL93nQFs2S386QaG6q1GPN1r02Ky"
     }).then(function(gifs) {
       var boardData = {
         boardName: myBoard,

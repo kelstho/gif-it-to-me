@@ -309,7 +309,7 @@ $(document).ready(function() {
     var bestCaption = $(this).text();
     $.ajax({
       url:
-        "http://api.giphy.com/v1/gifs/random?api_key=6o5OpL93nQFs2S386QaG6q1GPN1r02Ky"
+        "https://api.giphy.com/v1/gifs/random?api_key=6o5OpL93nQFs2S386QaG6q1GPN1r02Ky"
     }).then(function(result) {
       var gifAdjust = result.data.id;
       $.ajax({
