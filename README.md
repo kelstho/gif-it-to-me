@@ -1,19 +1,17 @@
 # Gif It To Me
+Gif It To Me is a multiplayer, interactive board game that challenges players to write the funniest or most clever caption for a selection of animated gifs. Players take turns judging each round. The first player to make it to the tenth space is the winner. We came up with the idea for Gif It To Me during the time of the Covid-19 quarantine, as it allows people who are separated to connect with one another and play an exciting online game of judgement.
 
-Description: A multiplayer, interactive board game that challenges players to write the funniest or most clever caption for a selection of animated gifs. Players take turns judging each round. The first player to make it to the tenth space is the winner
+## Landing Page
+![Start](/public/images/start.png?raw=true)
+The landing page gives players the option to either start a game or join a game. If the player would like to create a game, they can input the name of a game that they would like to start and choose between three and six players. They may then press the 'start game' button, at which point they will be redirected to the gameboard page. The player who creates the game board is automatically designated as 'Player1.'
+![Join](/public/images/join.png?raw=true)
+If a Player wishes to join a game that already exists, they simply input the the name of the game into the 'join' input box and press the 'join game' button, which will redirect them to a gameboard that has already been created. players will be assigned 'Player2' through 'Player6' depending on the order in which they join the game.
 
-Motivation: during this time of quarantine and isolation, Gif It To Me allows people who are separated to connect with one another and play a fun online game of judgement
+## Technologies
+MySQL, Sequelize, Socket.io, Materialize, Node.js, Express, Giphy API
 
-User Story: as a user, I want to relax and play games online with my friends. Gif It To Me provides endless minutes of fun, challenging people to face off in a virtual battle arena of wit and hilarity
+## Creators
+Evan LaFollette, Mark Stout, Kelly Thompson, Ashton Beaudoin
 
-Technologies: Sequelize, Socket.io, Materialize, Node, Express, Giphy API
-
-Challenges: quarantine (working remotely), getting Socket.io to function correctly, figuring out all of our routes, building a gameboard
-
-Successes: getting Socket.io to function correctly, getting the gifs to populate the correct divs correctly, mastering the CSS
-
-Future Development: Add optional themes for each game (cat gifs, truck gifs, food gifs, etc), create an ongoing scoreboard to keep between groups of friends/game rooms, incorporate social media (posting your high scores or favorite caption/gif combos)
-
-Deployed Site: https://polar-savannah-75488.herokuapp.com/
-
-Creators: Evan LaFollette, Mark Stout, Kelly Thompson, Ashton Beaudoin
+## Links
+[Deployed Application](https://polar-savannah-75488.herokuapp.com/)
