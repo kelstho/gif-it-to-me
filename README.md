@@ -22,7 +22,11 @@ While the judge makes their selection, a modal appears for the other players tha
 Once the judge has made their selection, a modal will appear for all players displaying the round winner, the caption that was selected, and the gif that was captioned. This modal will disappear automatically after a short amount of time and whoever won the previous round will become the judge for the next round. This cycle will continue until one player reaches the final space, at which point a modal will appear declaring a final game winner.
 
 ## Technologies
-MySQL, Sequelize, Socket.io, Materialize, Node.js, Express, Giphy API
+Database: MySQL
+
+APIs: Giphy API
+
+Frameworks/Libraries: Node, Sequelize, Socket.io, Materialize, Express
 
 ## Creators
 Evan LaFollette, Mark Stout, Kelly Thompson, Ashton Beaudoin
