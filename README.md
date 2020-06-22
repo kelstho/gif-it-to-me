@@ -24,7 +24,7 @@ Once the judge has made their selection, a modal will appear for all players dis
 ## Technologies
 Database: MySQL
 
-APIs: Giphy API
+APIs: Giphy API [(Link)](https://developers.giphy.com/docs/api/)
 
 Frameworks/Libraries: Node, Sequelize, Socket.io, Materialize, Express
 
@@ -33,3 +33,5 @@ Evan LaFollette, Mark Stout, Kelly Thompson, Ashton Beaudoin
 
 ## Links
 [Deployed Application](https://polar-savannah-75488.herokuapp.com/)
+
+[Github Repo](https://github.com/kelstho/gif-it-to-me)
