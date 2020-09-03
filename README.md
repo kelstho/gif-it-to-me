@@ -32,6 +32,6 @@ Frameworks/Libraries: Node, Sequelize, Socket.io, Materialize, Express
 Evan LaFollette, Mark Stout, Kelly Thompson, Ashton Beaudoin
 
 ## Links
-[Deployed Application](https://polar-savannah-75488.herokuapp.com/)
+[Deployed Application](https://gif-it-to-me.herokuapp.com/)
 
 [Github Repo](https://github.com/kelstho/gif-it-to-me)
